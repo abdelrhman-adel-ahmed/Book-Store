@@ -1,0 +1,14 @@
+coverage run manage.py test
+coverage report
+coverage html
+py manage.pt test
+coverage run --omit='*/venv/*' manage.py test
+
+
+flake8 to tell the erros that now follow the pep8 concention 
+flake8-iosrt --> to make the imports follow the pep8 convenstion 
+
+isort . --> command to sort all the import in the current directory to follow the pep8 import conventions
+
+
+py manage.py makemessages --all -->create message file

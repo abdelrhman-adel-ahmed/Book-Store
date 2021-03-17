@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+
+Hello {{ user.user_name }},
+
+You registered an account on Book Store, before being able to use your account you need to verify
+that this is your email address by clicking here: http://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}
+
+
+Kind Regards, elshe2
+
+
+{% endautoescape %}

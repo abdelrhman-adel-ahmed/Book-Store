@@ -1,0 +1,14 @@
+test stripe payment :
+
+No auth: 4242424242424242  -->simulate success payment without autherization
+
+Auth: 4000002500003155 -->simulate success payment
+
+Error: 4000000000009995  --> simulate error in the payment
+
+
+stripe listen --> open stripe cli and gives info about the incoming intent to the stripe 
+
+note:you need to add trailing slash at the end
+stripe listen --forward-to localhost:8000/payment/webhook/ -->open stripe cli and gives info about the incoming intent to
+the stripe and forward back information to the payment/webhook which collect some information from the stripe payload  

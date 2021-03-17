@@ -1,0 +1,67 @@
+https://dbdiagram.io/d/604b744ffcdcb6230b23df30
+
+// Creating tables
+Table product as p{
+  id int [pk, increment] // auto-increment
+  product_type int
+  categpry int
+  description varchar
+  slug slug
+  regular_price decimal
+  discount_price decimal
+  is_active boolean
+  created_at timestamp
+  updated_at timestamp
+  }
+
+Table ProductType as pt{
+ id int [pk, increment]
+  name varchar
+  is_active boolean
+}
+
+table ProductSpecification{
+  id int [pk, increment]
+  product_type int
+  name varchar
+  
+}
+
+table ProductSpecificationValue{
+  id int [pk, increment]
+  product int
+  specification int
+  value varchar
+}
+
+table ProductImage{
+  id int [pk,increment]
+  product int 
+  image image
+  alt_text varchar
+  is_feature boolean
+  created_at timestamp
+  updated_at timestamp
+}
+table category_MPTT{
+  id int [pk,increment]
+  name varchar
+  slug slug
+  parent varchar
+  is_active boolean
+}
+
+
+
+
+Ref: "product"."id" < "ProductSpecificationValue"."product"
+
+Ref: "ProductType"."id" < "product"."product_type"
+
+Ref: "ProductType"."id" < "ProductSpecification"."product_type"
+
+Ref: "ProductSpecification"."id" < "ProductSpecificationValue"."specification"
+
+Ref: "product"."id" < "ProductImage"."product"
+
+Ref: "category_MPTT"."id" < "product"."categpry"
