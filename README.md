@@ -1,7 +1,7 @@
 ## Instructions
-1.Download
-2.Extract in a folder
-3.Open with visual studio code
+* Download
+* Extract in a folder
+* Open with visual studio code
 
 ### Commands:
   * py -m venv venv
