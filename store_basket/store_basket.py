@@ -17,18 +17,7 @@ class Basket:
             basket = self.session[settings.BASKET_SESSION_ID] = {}
         #basket have the dict that have the session data 
         self.basket = basket
-
-        '''
-        self.session=request.session
-        basket=self.session.get('skye')
-        if 'skey' not in request.session:
-            <!--error was here bakset instead of basjet->
-            bakset=self.session['skey']={}
-        self.basket=basket
-        '''
-
-
-
+        
     def add(self,product,product_qty):
         '''
         add and update user session data
