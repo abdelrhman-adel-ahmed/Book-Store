@@ -39,10 +39,6 @@ def orders_add(request):
                 OrderItem.objects.create(
                     order_id=order_id, product=item["product"], price=item["price"], quantity=item["qty"]
                 )
-        add1 = request.POST.get("line1")
-        add2 = request.POST.get("line2")
-        print(add1)
-        print(add2)
         respone = JsonResponse({"sucess": "we are good"})
         return respone
 
