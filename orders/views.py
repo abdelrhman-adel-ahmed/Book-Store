@@ -18,8 +18,6 @@ def orders_add(request):
         user_id = request.user.id
         order_key = request.POST.get("order_key")
         baskettotal = basket.get_total_price()
-        print(basket.session)
-        print(basket.basket)
         # check if the order is exist and only one order (because user may press pay and then go back before the payment actullay
         # finihsed and then go and press pay again)
         if Order.objects.filter(order_key=order_key).exists():
